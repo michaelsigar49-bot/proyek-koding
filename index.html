@@ -1,197 +1,42 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
-body {
-    font-family: "Segoe UI", Arial, sans-serif;
-    background: linear-gradient(135deg, #4f46e5, #7c3aed);
-    min-height: 100vh;
+<body>
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    <div class="container">
 
-    padding: 20px;
-}
+        <div class="header">
+            <h1>To-Do List</h1>
+            <p>Kelola tugasmu dengan mudah ✨</p>
+        </div>
 
-/* Container utama */
-.container {
-    width: 100%;
-    max-width: 550px;
+        <div class="input-group">
+            <input 
+                type="text" 
+                id="taskInput" 
+                placeholder="Apa yang ingin kamu kerjakan?"
+            >
 
-    background: rgba(255, 255, 255, 0.95);
-    padding: 35px;
+            <button onclick="addTask()">
+                + Tambah
+            </button>
+        </div>
 
-    border-radius: 20px;
+        <div class="task-section">
+            <h2>Daftar Tugas</h2>
 
-    box-shadow:
-        0 20px 50px rgba(0, 0, 0, 0.2);
+            <ul id="taskList"></ul>
+        </div>
 
-    backdrop-filter: blur(10px);
-}
+    </div>
 
-/* Judul */
-h1 {
-    text-align: center;
-    color: #1f2937;
-    font-size: 32px;
-    margin-bottom: 25px;
-    font-weight: 700;
-}
+    <script src="script.js"></script>
 
-/* Input dan tombol */
-.input-group {
-    display: flex;
-    gap: 10px;
-}
-
-input {
-    flex: 1;
-
-    padding: 14px 16px;
-
-    border: 2px solid #e5e7eb;
-    border-radius: 12px;
-
-    font-size: 15px;
-    outline: none;
-
-    transition: 0.3s;
-}
-
-input:focus {
-    border-color: #6366f1;
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
-}
-
-/* Tombol tambah */
-button {
-    border: none;
-
-    padding: 14px 20px;
-
-    border-radius: 12px;
-
-    background: linear-gradient(
-        135deg,
-        #6366f1,
-        #8b5cf6
-    );
-
-    color: white;
-
-    font-size: 15px;
-    font-weight: 600;
-
-    cursor: pointer;
-
-    transition: 0.3s;
-
-    box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
-}
-
-button:hover {
-    transform: translateY(-2px);
-
-    box-shadow:
-        0 8px 20px rgba(99, 102, 241, 0.4);
-}
-
-button:active {
-    transform: scale(0.97);
-}
-
-/* Daftar tugas */
-ul {
-    list-style: none;
-    margin-top: 25px;
-}
-
-/* Item tugas */
-li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    background: #f8fafc;
-
-    padding: 14px 16px;
-
-    margin-bottom: 12px;
-
-    border-radius: 12px;
-
-    border: 1px solid #e5e7eb;
-
-    transition: 0.3s;
-}
-
-li:hover {
-    transform: translateX(4px);
-
-    box-shadow:
-        0 5px 15px rgba(0, 0, 0, 0.08);
-}
-
-/* Teks tugas */
-li span {
-    cursor: pointer;
-
-    color: #374151;
-
-    font-size: 15px;
-
-    transition: 0.3s;
-}
-
-/* Tugas selesai */
-li.completed {
-    background: #f1f5f9;
-}
-
-li.completed span {
-    text-decoration: line-through;
-    color: #9ca3af;
-}
-
-/* Tombol hapus */
-.delete {
-    background: #ef4444;
-
-    padding: 8px 12px;
-
-    border-radius: 8px;
-
-    font-size: 13px;
-
-    box-shadow: none;
-}
-
-.delete:hover {
-    background: #dc2626;
-
-    transform: scale(1.05);
-}
-
-/* Tampilan HP */
-@media (max-width: 500px) {
-
-    .container {
-        padding: 25px 20px;
-    }
-
-    h1 {
-        font-size: 27px;
-    }
-
-    .input-group {
-        flex-direction: column;
-    }
-
-    input,
-    button {
-        width: 100%;
-    }
-}
+</body>
+</html>
